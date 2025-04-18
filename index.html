@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">Corentin GODON</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                        <label for="darkModeToggle" class="toggle-label">
+                            <span class="toggle-ball"></span>
+                        </label>
+                    </div>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section À propos -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="assets\images\1000013048.png" alt="Photo de profil">
+                </div>
+                <div class="about-text">
+                    <h1>Bonjour, je suis <span>Corentin GODON</span></h1>
+                    <p>Développeur web passionné avec une expertise en HTML, CSS et JavaScript. J'aime créer des sites web modernes, accessibles et responsive. Mon objectif est de fournir des solutions numériques qui allient esthétique et fonctionnalité.</p>
+                    <p>En dehors du développement, je m'intéresse beaucoup au jeu vidéo mais surtout au monde de l'E-sport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Mes Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <h3>HTML5</h3>
+                    <p>Maîtrise des balises sémantiques et des bonnes pratiques d'accessibilité</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Animations, Flexbox, Grid et design responsive</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Création de sites adaptés à tous les appareils</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Flutter</h3>
+                    <p>Développement d'applications web dynamiques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-details="Description plus détaillée du projet...">
+                    <img src="assets\images\E-ComLogo.png" alt="Projet 1">
+                    <div class="project-info">
+                        <h3>Site E-commerce</h3>
+                        <p>Création d'une boutique en ligne pour la vente de motos, accessoires et pieces détachés.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets\images\LogoHome2Home.png" alt="Projet 2">
+                    <div class="project-info">
+                        <h3>Site Home2Home</h3>
+                        <p>Création d'un site web mobile pour le transport de colis entre particuliers via le réseau ferroviaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group"></div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Mon Portfolio. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/corentin-godon/" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="https://github.com/CorentinG21" aria-label="GitHub" target="_blank">GitHub</a>
+                    <a href="https://www.instagram.com/corentin._.gdn/" aria-label="Instagram">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modale pour les projets -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Image du projet">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script>
+        // Sélection des éléments
+        const projectCards = document.querySelectorAll('.project-card');
+        const modal = document.getElementById('projectModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const closeModal = document.querySelector('.close-modal');
+    
+        // Ajout des événements pour chaque carte de projet
+        projectCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                const title = this.querySelector('h3').textContent;
+                const description = this.querySelector('p').textContent;
+                
+                modalImage.src = imgSrc;
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Empêche le défilement
+            });
+        });
+    
+        // Fermer la modale
+        closeModal.addEventListener('click', function() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Rétablit le défilement
+        });
+    
+        // Fermer la modale en cliquant à l'extérieur
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Vérifier le mode stocké dans localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        
+        // Basculer le mode
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    
+        // Menu burger (si ce n'est pas déjà fait)
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
