@@ -39,8 +39,29 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <img src="assets\images\1000013048.png" alt="Photo de profil">
+                    <!-- Carrousel d'images -->
+                    <div class="profile-carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/images/1000013048.png" alt="Photo de profil ghibli">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets\images\20240601_210027.jpg" alt="Phto de profil Proffessionnelle">
+                            </div>
+                        </div>
+                        
+                        <!-- Contrôles du carrousel -->
+                        <button class="carousel-control prev" aria-label="Image précédente">&#10094;</button>
+                        <button class="carousel-control next" aria-label="Image suivante">&#10095;</button>
+                        
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="about-text">
                     <h1>Bonjour, je suis <span>Corentin GODON</span></h1>
                     <p>Développeur web passionné avec une expertise en HTML, CSS et JavaScript. J'aime créer des sites web modernes, accessibles et responsive. Mon objectif est de fournir des solutions numériques qui allient esthétique et fonctionnalité.</p>
@@ -132,9 +153,9 @@
             <div class="footer-content">
                 <p>&copy; 2023 Mon Portfolio. Tous droits réservés.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/corentin-godon/" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/corentin-godon/" aria-label="LinkedIn" target="_blank">LinkedIn</a>
                     <a href="https://github.com/CorentinG21" aria-label="GitHub" target="_blank">GitHub</a>
-                    <a href="https://www.instagram.com/corentin._.gdn/" aria-label="Instagram">Instagram</a>
+                    <a href="https://www.instagram.com/corentin._.gdn/" aria-label="Instagram" target="_blank">Instagram</a>
                 </div>
             </div>
         </div>
@@ -219,6 +240,75 @@
             navLinks.classList.toggle('active');
             burger.classList.toggle('toggle');
         });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+        const totalItems = carouselItems.length;
+        let autoSlideInterval;
+
+        // Afficher un élément spécifique
+        function showItem(index) {
+            // Masquer tous les éléments
+            carouselItems.forEach(item => item.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            
+            // Gérer les limites
+            currentIndex = (index + totalItems) % totalItems;
+            
+            // Afficher l'élément courant
+            carouselItems[currentIndex].classList.add('active');
+            indicators[currentIndex].classList.add('active');
+        }
+
+        // Navigation
+        function goToPrev() {
+            showItem(currentIndex - 1);
+            resetAutoSlide();
+        }
+
+        function goToNext() {
+            showItem(currentIndex + 1);
+            resetAutoSlide();
+        }
+
+        prevBtn.addEventListener('click', goToPrev);
+        nextBtn.addEventListener('click', goToNext);
+
+        // Navigation par indicateurs
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showItem(index);
+                resetAutoSlide();
+            });
+        });
+
+        // Auto-défilement (optionnel)
+        /* function startAutoSlide() {
+            autoSlideInterval = setInterval(goToNext, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        } */
+
+        // Démarrer l'auto-défilement
+        startAutoSlide();
+
+        // Pause au survol
+        const carousel = document.querySelector('.profile-carousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        carousel.addEventListener('mouseleave', startAutoSlide);
+
+        // Initialisation
+        showItem(0);
+    });
     </script>
 </body>
 </html>
