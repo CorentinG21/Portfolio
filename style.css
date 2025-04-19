@@ -26,7 +26,7 @@ body {
 .theme-toggle {
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    margin: 0;
 }
 
 .toggle-checkbox {
@@ -149,6 +149,8 @@ header .container {
 
 .nav-links li {
     margin-left: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -547,6 +549,7 @@ footer {
     .theme-toggle {
         margin-left: 0;
         margin-top: 20px;
+        margin: 0;
     }
 
     .nav-links.active {
