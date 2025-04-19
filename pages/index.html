@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -81,22 +81,43 @@
                 <div class="skill-item">
                     <div class="skill-icon">💻</div>
                     <h3>HTML5</h3>
-                    <p>Maîtrise des balises sémantiques et des bonnes pratiques d'accessibilité</p>
+                    <p>Utilisation des balises sémantiques, accessibilité et structuration optimale des contenus.</p>
                 </div>
+                
                 <div class="skill-item">
                     <div class="skill-icon">🎨</div>
-                    <h3>CSS</h3>
-                    <p>Animations, Flexbox, Grid et design responsive</p>
+                    <h3>CSS3</h3>
+                    <p>Maîtrise de Flexbox, Grid, animations et création de designs adaptatifs et modernes.</p>
                 </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">📜</div>
+                    <h3>JavaScript</h3>
+                    <p>Ajout d’interactivité, logique front-end et animations fluides pour une meilleure UX.</p>
+                </div>
+                
                 <div class="skill-item">
                     <div class="skill-icon">📱</div>
                     <h3>Responsive Design</h3>
-                    <p>Création de sites adaptés à tous les appareils</p>
+                    <p>Optimisation des interfaces pour tous types d’écrans : mobiles, tablettes et ordinateurs.</p>
                 </div>
+                
                 <div class="skill-item">
                     <div class="skill-icon">🔧</div>
                     <h3>Flutter</h3>
-                    <p>Développement d'applications web dynamiques</p>
+                    <p>Développement d’applications mobiles et web performantes avec une seule base de code.</p>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Laravel</h3>
+                    <p>Développement web rapide et sécurisé avec l’un des frameworks PHP les plus puissants.</p>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🔩</div>
+                    <h3>Symfony</h3>
+                    <p>Conception d'applications web solides, évolutives et bien structurées en PHP.</p>
                 </div>
             </div>
         </div>
@@ -129,7 +150,7 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contactez-moi</h2>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/xyzerkzk" method="POST">
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required>
@@ -142,12 +163,13 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <div class="form-group"></div>
+                <div class="form-group">
                     <button type="submit" class="btn">Envoyer</button>
                 </div>
             </form>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -270,12 +292,12 @@
         // Navigation
         function goToPrev() {
             showItem(currentIndex - 1);
-            resetAutoSlide();
+            // resetAutoSlide();
         }
 
         function goToNext() {
             showItem(currentIndex + 1);
-            resetAutoSlide();
+            // resetAutoSlide();
         }
 
         prevBtn.addEventListener('click', goToPrev);
