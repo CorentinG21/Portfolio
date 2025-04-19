@@ -128,23 +128,29 @@
         <div class="container">
             <h2>Mes Projets</h2>
             <div class="projects-grid">
-                <div class="project-card" data-details="Description plus détaillée du projet...">
-                    <img src="assets\images\E-ComLogo.png" alt="Projet 1">
+    
+                <!-- Projet E-Commerce -->
+                <a href="/pages/E-com.html" class="project-card">
+                    <img src="assets/images/E-ComLogo.png" alt="Projet E-Com">
                     <div class="project-info">
                         <h3>Site E-commerce</h3>
-                        <p>Création d'une boutique en ligne pour la vente de motos, accessoires et pieces détachés.</p>
+                        <p>Création d'une boutique en ligne pour la vente de motos, accessoires et pièces détachées.</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="assets\images\LogoHome2Home.png" alt="Projet 2">
+                </a>
+    
+                <!-- Projet Home2Home -->
+                <a href="/pages/Home2Home.html" class="project-card">
+                    <img src="assets/images/LogoHome2Home.png" alt="Projet Home2Home">
                     <div class="project-info">
                         <h3>Site Home2Home</h3>
                         <p>Création d'un site web mobile pour le transport de colis entre particuliers via le réseau ferroviaire.</p>
                     </div>
-                </div>
+                </a>
+    
             </div>
         </div>
     </section>
+    
 
     <!-- Section Contact -->
     <section id="contact" class="contact-section">
@@ -186,55 +192,6 @@
         </div>
     </footer>
 
-    <!-- Modale pour les projets -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img id="modalImage" src="" alt="Image du projet">
-            <h3 id="modalTitle"></h3>
-            <p id="modalDescription"></p>
-        </div>
-    </div>
-
-    <script>
-        // Sélection des éléments
-        const projectCards = document.querySelectorAll('.project-card');
-        const modal = document.getElementById('projectModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDescription = document.getElementById('modalDescription');
-        const closeModal = document.querySelector('.close-modal');
-    
-        // Ajout des événements pour chaque carte de projet
-        projectCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const imgSrc = this.querySelector('img').src;
-                const title = this.querySelector('h3').textContent;
-                const description = this.querySelector('p').textContent;
-                
-                modalImage.src = imgSrc;
-                modalTitle.textContent = title;
-                modalDescription.textContent = description;
-                
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden'; // Empêche le défilement
-            });
-        });
-    
-        // Fermer la modale
-        closeModal.addEventListener('click', function() {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Rétablit le défilement
-        });
-    
-        // Fermer la modale en cliquant à l'extérieur
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
     <script>
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
