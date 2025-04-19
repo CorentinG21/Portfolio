@@ -10,13 +10,14 @@
 <body>
     <!-- Header avec navigation -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">Corentin GODON</div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#skills">Compétences</a></li>
                     <li><a href="#projects">Projets</a></li>
+                    <li><a href="#passion">Passions</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
                         <div class="theme-toggle">
@@ -34,7 +35,7 @@
                 </div>
             </nav>
         </div>
-    </header>
+    </header>    
 
     <!-- Section À propos -->
     <section id="about" class="about-section">
@@ -150,6 +151,24 @@
             </div>
         </div>
     </section>
+
+    <section id="passion" class="passion-section">
+        <div class="container">
+            <h2>Mes Passions</h2>
+            <div class="passion-grid">
+                <div class="passion-item">
+                    <img src="assets\images\Passion\230213-jeux-video.jpg" alt="Jeux Vidéo">
+                    <h3>Jeux Vidéo</h3>
+                    <p>Passionné par les jeux vidéo, je suis toujours à l'affût des dernières tendances et sorties.</p>
+                </div>
+                <div class="passion-item">
+                    <img src="assets\images\Passion\m8.png" alt="E-sport">
+                    <h3>E-sport</h3>
+                    <p>Suivre les compétitions d'e-sport est une de mes passions. J'aime analyser les stratégies des équipes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
 
     <!-- Section Contact -->
@@ -224,73 +243,44 @@
         });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const carouselItems = document.querySelectorAll('.carousel-item');
+        // Récupérer les éléments du carrousel
+        const items = document.querySelectorAll('.carousel-item');
         const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
-        const totalItems = carouselItems.length;
-        let autoSlideInterval;
+        let activeIndex = 0;
 
-        // Afficher un élément spécifique
-        function showItem(index) {
-            // Masquer tous les éléments
-            carouselItems.forEach(item => item.classList.remove('active'));
-            indicators.forEach(ind => ind.classList.remove('active'));
-            
-            // Gérer les limites
-            currentIndex = (index + totalItems) % totalItems;
-            
-            // Afficher l'élément courant
-            carouselItems[currentIndex].classList.add('active');
-            indicators[currentIndex].classList.add('active');
+        // Fonction pour activer l'élément suivant
+        function nextItem() {
+            items[activeIndex].classList.remove('active');
+            indicators[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + 1) % items.length;
+            items[activeIndex].classList.add('active');
+            indicators[activeIndex].classList.add('active');
         }
 
-        // Navigation
-        function goToPrev() {
-            showItem(currentIndex - 1);
-            // resetAutoSlide();
+        // Fonction pour activer l'élément précédent
+        function prevItem() {
+            items[activeIndex].classList.remove('active');
+            indicators[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex - 1 + items.length) % items.length;
+            items[activeIndex].classList.add('active');
+            indicators[activeIndex].classList.add('active');
         }
 
-        function goToNext() {
-            showItem(currentIndex + 1);
-            // resetAutoSlide();
-        }
+        // Écouter les clics sur les boutons de contrôle
+        document.querySelector('.carousel-control.next').addEventListener('click', nextItem);
+        document.querySelector('.carousel-control.prev').addEventListener('click', prevItem);
 
-        prevBtn.addEventListener('click', goToPrev);
-        nextBtn.addEventListener('click', goToNext);
-
-        // Navigation par indicateurs
-        indicators.forEach(indicator => {
-            indicator.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                showItem(index);
-                resetAutoSlide();
+        // Écouter les clics sur les indicateurs
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                items[activeIndex].classList.remove('active');
+                indicators[activeIndex].classList.remove('active');
+                activeIndex = index;
+                items[activeIndex].classList.add('active');
+                indicators[activeIndex].classList.add('active');
             });
         });
 
-        // Auto-défilement (optionnel)
-        /* function startAutoSlide() {
-            autoSlideInterval = setInterval(goToNext, 5000);
-        }
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        } */
-
-        // Démarrer l'auto-défilement
-        /* startAutoSlide(); */
-
-        // Pause au survol
-        /* const carousel = document.querySelector('.profile-carousel');
-        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-        carousel.addEventListener('mouseleave', startAutoSlide); */
-
-        // Initialisation
-        showItem(0);
-    });
     </script>
     <script>
         document.getElementById("contact-form").addEventListener("submit", async function(e) {
