@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Home2Home - Corentin Godon</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Corentin GODON</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">À propos</a></li>
+                    <li><a href="../index.html#skills">Compétences</a></li>
+                    <li><a href="../index.html#projects">Projets</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li>
+                        <div class="theme-toggle">
+                            <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                            <label for="darkModeToggle" class="toggle-label">
+                                <span class="toggle-ball"></span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-detail container">
+        <div class="project-content">
+            <h2>Contexte du projet</h2>
+            <p><strong>Home2Home</strong> est une application web mobile développée dans le cadre de mon stage. Elle propose un service de livraison de colis entre particuliers en s'appuyant sur les trajets ferroviaires existants. L’objectif est de permettre à des voyageurs de transporter des colis d’un point A à un point B en échange d’une compensation, tout en assurant un suivi sécurisé.</p>
+
+            <h2>Galerie du Projet</h2>
+            <p>La galerie sera bientôt disponible. Le projet est actuellement en cours de finalisation et n’a pas encore été déployé.</p>
+
+            <!-- <div class="project-gallery">
+                <img src="../assets/images/Home2Home/home2home_1.png" alt="Capture interface dépôt de colis">
+                <img src="../assets/images/Home2Home/home2home_2.png" alt="Capture prise en charge d’un colis">
+                <img src="../assets/images/Home2Home/home2home_3.png" alt="Capture historique des livraisons">
+            </div> -->
+
+            <h2>Fonctionnalités principales</h2>
+            <ul>
+                <li><strong>Dépôt de colis :</strong> formulaire en plusieurs étapes avec génération automatique de QR codes</li>
+                <li><strong>Recherche de trajets :</strong> affichage des trajets disponibles pour les voyageurs</li>
+                <li><strong>Prise en charge de colis :</strong> système de scan de QR code pour validation</li>
+                <li><strong>Suivi des colis :</strong> état en temps réel (déposé, en transit, livré)</li>
+                <li><strong>Interface utilisateur claire :</strong> navigation fluide, design responsive</li>
+            </ul>
+
+            <h2>Technologies utilisées</h2>
+            <ul>
+                <li><strong>Backend :</strong> Laravel 12</li>
+                <li><strong>Frontend :</strong> Flutter</li>
+                <li><strong>Base de données :</strong> MySQL</li>
+                <li><strong>Authentification :</strong> Laravel Breeze</li>
+                <li><strong>QR code :</strong> Génération automatique avec une librairie Laravel</li>
+                <li><strong>Outils :</strong> Git, GitHub</li>
+            </ul>
+
+            <h2>Défis rencontrés</h2>
+            <ul>
+                <li><strong>Synchronisation des étapes :</strong> gérer les statuts du colis entre utilisateurs</li>
+                <li><strong>Conception de l’expérience utilisateur :</strong> simplification du dépôt/scan/prise en charge</li>
+                <li><strong>Développement Flutter :</strong> prise en main d’un nouveau framework mobile</li>
+                <li><strong>Connexion API ferroviaire :</strong> pour lister les trajets réels (intégration prévue)</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Corentin GODON. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/corentin-godon/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/CorentinG21" target="_blank">GitHub</a>
+                    <a href="https://www.instagram.com/corentin._.gdn/" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.checked = true;
+            }
+
+            darkModeToggle.addEventListener('change', function () {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', this.checked ? 'enabled' : 'disabled');
+            });
+
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.project-gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        document.querySelector('.lightbox-close').addEventListener('click', () => {
+            document.getElementById('lightbox').style.display = 'none';
+        });
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
