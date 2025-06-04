@@ -653,6 +653,55 @@ footer {
     line-height: 1.8;
 }
 
+/* Ajouts CSS pour la page Gentle Mates */
+.project-hero {
+    background: linear-gradient(135deg, #121212, #1a1a2e);
+    color: white;
+    padding: 6rem 0 4rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.project-hero h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.achievement-card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: var(--shadow);
+}
+
+.achievement-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.achievement-card ul {
+    padding-left: 1.25rem;
+}
+
+.achievement-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
 /* Responsive pour les grands écrans */
 @media (max-width: 75em) {
     section {
@@ -703,6 +752,14 @@ footer {
 
     .carousel-indicators {
         bottom: 0.75rem;
+    }
+
+    .project-hero h1 {
+        font-size: 2.25rem;
+    }
+    
+    .project-hero p {
+        font-size: 1.1rem;
     }
 }
 
