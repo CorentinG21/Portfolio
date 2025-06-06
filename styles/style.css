@@ -591,6 +591,78 @@ header {
     margin-bottom: 1.5rem;
 }
 
+/* Style pour la section des consoles */
+.consoles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.console-editor {
+    background: var(--card);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.console-editor:hover {
+    transform: translateY(-5px);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: white;
+    gap: 1rem;
+}
+
+.editor-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.editor-logo {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+
+.console-list {
+    padding: 1rem;
+}
+
+.console-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.console-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.console-info {
+    flex: 1;
+}
+
+.console-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.console-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
 /* Section Contact */
 .contact-section {
     background: var(--bg);
@@ -878,6 +950,14 @@ footer {
     .project-hero p {
         font-size: 1.1rem;
     }
+
+    .consoles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .console-item {
+        flex-direction: column;
+    }
 }
 
 /* Responsive pour les petits écrans */
@@ -955,6 +1035,14 @@ footer {
     .timeline-item:nth-child(odd)::after,
     .timeline-item:nth-child(even)::after {
         left: 1.0625rem;
+    }
+
+    .consoles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .console-item {
+        flex-direction: column;
     }
 }
 
