@@ -109,41 +109,32 @@ section {
     box-shadow: var(--shadow);
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    padding: 1.25rem 0;
-    z-index: 1000;
-    box-shadow: var(--shadow);
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 0.375rem;
+    cursor: pointer;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.burger span {
+    display: block;
+    width: 1.5625rem;
+    height: 0.1875rem;
+    background: white;
+    transition: all 0.3s ease;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.3125rem, 0.3125rem);
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+.burger.active span:nth-child(2) {
+    opacity: 0;
 }
 
-.nav-links a {
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--secondary);
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.3125rem, -0.3125rem);
 }
 
 /* Dark Mode Toggle */
@@ -181,177 +172,44 @@ header {
     transform: translateX(1.875rem);
 }
 
-/* Burger Menu */
-.burger {
-    display: none;
-    flex-direction: column;
-    gap: 0.375rem;
-    cursor: pointer;
-}
-
-.burger span {
-    display: block;
-    width: 1.5625rem;
-    height: 0.1875rem;
-    background: white;
-    transition: all 0.3s ease;
-}
-
-.burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(0.3125rem, 0.3125rem);
-}
-
-.burger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(0.3125rem, -0.3125rem);
-}
-
-/* Sections communes */
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.25rem;
-    background: var(--secondary);
-    margin: 1rem auto 0;
-}
-
-/* Section À propos */
-.about-section {
-    background: var(--card);
-    margin-top: 5rem;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.about-img {
-    flex: 1;
-}
-
-.profile-carousel {
-    position: relative;
+/* ---------------- HEADER ---------------- */
+header {
+    position: fixed;
+    top: 0;
     width: 100%;
-    max-width: 25rem;
-    aspect-ratio: 1/1;
-    border-radius: 0.625rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin: 0 auto;
-    min-width: 15rem; /* Assurer que le carrousel ne devient pas trop petit */
-}
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-item {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-item.active {
-    opacity: 1;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Contrôles Carrousel */
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--primary);
     color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.25rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
+    padding: 1.25rem 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
-.carousel-control:hover {
-    background: var(--accent);
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-.carousel-control.prev {
-    left: 1rem;
-}
-
-.carousel-control.next {
-    right: 1rem;
-}
-
-/* Indicateurs Carrousel */
-.carousel-indicators {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+.nav-links {
     display: flex;
-    gap: 0.625rem;
+    gap: 2rem;
+    list-style: none;
 }
 
-.indicator {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s;
+.nav-links a {
+    transition: color 0.3s ease;
 }
 
-.indicator.active {
-    background: var(--accent);
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
-}
-
-.about-text h1 span {
+.nav-links a:hover {
     color: var(--secondary);
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-/* Section Compétences */
+/* ---------------- COMPETENCES ---------------- */
 .skills-section {
     background: var(--bg);
 }
@@ -389,7 +247,7 @@ header {
     color: var(--text-light);
 }
 
-/* Section Expériences */
+/* ---------------- EXPERIENCES ---------------- */
 .experience-section {
     background: var(--card);
 }
@@ -506,7 +364,7 @@ header {
     font-size: 0.75rem;
 }
 
-/* Section Projets */
+/* ---------------- PROJETS ---------------- */
 .projects-section {
     background: var(--bg);
 }
@@ -548,7 +406,7 @@ header {
     margin-bottom: 1.5rem;
 }
 
-/* Section Passions */
+/* ---------------- PASSIONS ---------------- */
 .passion-section {
     background: var(--card);
 }
@@ -591,79 +449,7 @@ header {
     margin-bottom: 1.5rem;
 }
 
-/* Style pour la section des consoles */
-.consoles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.console-editor {
-    background: var(--card);
-    border-radius: 0.625rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.console-editor:hover {
-    transform: translateY(-5px);
-}
-
-.editor-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    color: white;
-    gap: 1rem;
-}
-
-.editor-header h3 {
-    margin: 0;
-    color: white;
-}
-
-.editor-logo {
-    width: 3rem;
-    height: 3rem;
-    object-fit: contain;
-}
-
-.console-list {
-    padding: 1rem;
-}
-
-.console-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 0.5rem;
-    transition: background 0.3s ease;
-}
-
-.console-item:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.console-info {
-    flex: 1;
-}
-
-.console-info h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--primary);
-}
-
-.console-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-/* Section Contact */
+/* ---------------- CONTACT ---------------- */
 .contact-section {
     background: var(--bg);
 }
@@ -706,6 +492,173 @@ header {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
+}
+
+/* ---------------- SECTIONS COMMUNES ---------------- */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.25rem;
+    background: var(--secondary);
+    margin: 1rem auto 0;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}
+
+/* ---------------- AUTRES PAGES ---------------- */
+
+/* Section À propos (si utilisée ailleurs) */
+.about-section {
+    background: var(--card);
+    margin-top: 5rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.profile-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    aspect-ratio: 1/1;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    min-width: 15rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contrôles Carrousel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control:hover {
+    background: var(--accent);
+}
+
+.carousel-control.prev {
+    left: 1rem;
+}
+
+.carousel-control.next {
+    right: 1rem;
+}
+
+/* Indicateurs Carrousel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.625rem;
+}
+
+.indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: var(--accent);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-text h1 span {
+    color: var(--secondary);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
 }
 
 /* Page Projet */
@@ -780,29 +733,6 @@ header {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-}
-
-/* Footer */
-footer {
-    background: var(--primary);
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 1.5rem;
-}
-
-.social-links a {
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--secondary);
 }
 
 /* Page Confirmation */
@@ -891,6 +821,80 @@ footer {
     color: var(--text-light);
 }
 
+/* Style pour la section des consoles */
+.consoles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.console-editor {
+    background: var(--card);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.console-editor:hover {
+    transform: translateY(-5px);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: white;
+    gap: 1rem;
+}
+
+.editor-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.editor-logo {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+
+.console-list {
+    padding: 1rem;
+}
+
+.console-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.console-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.console-info {
+    flex: 1;
+}
+
+.console-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.console-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
 /* Responsive pour les grands écrans */
 @media (max-width: 75em) {
     section {
@@ -930,7 +934,7 @@ footer {
     }
 
     .profile-carousel {
-        max-width: 20rem; /* Réduire la taille sur tablettes */
+        max-width: 20rem;
         display: block;
     }
 
@@ -993,9 +997,9 @@ footer {
     }
 
     .profile-carousel {
-        max-width: 18rem; /* Taille réduite pour les petits écrans */
+        max-width: 18rem;
         display: block;
-        min-width: 15rem; /* Garde une taille minimale même sur petits écrans */
+        min-width: 15rem;
     }
 
     .carousel-control {
@@ -1046,7 +1050,7 @@ footer {
     }
 }
 
-/** Responsive pour les très petits écrans */
+/* Responsive pour les très petits écrans */
 @media (max-width: 36em) {
     section {
         padding: 3rem 0;
@@ -1065,8 +1069,8 @@ footer {
     }
 
     .profile-carousel {
-        max-width: 15rem; /* Taille réduite pour les très petits écrans */
-        min-width: 12rem; /* Assure une taille minimale plus petite */
+        max-width: 15rem;
+        min-width: 12rem;
         display: block;
     }
 
