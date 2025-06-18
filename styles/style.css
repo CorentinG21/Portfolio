@@ -209,9 +209,135 @@ header {
     color: var(--secondary);
 }
 
+/* ---------------- ABOUT ---------------- */
+.about-section {
+    background: var(--bg);
+    margin-top: 5rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.profile-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    aspect-ratio: 1/1;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    min-width: 15rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contrôles Carrousel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control:hover {
+    background: var(--accent);
+}
+
+.carousel-control.prev {
+    left: 1rem;
+}
+
+.carousel-control.next {
+    right: 1rem;
+}
+
+/* Indicateurs Carrousel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.625rem;
+}
+
+.indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: var(--accent);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-text h1 span {
+    color: var(--secondary);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
 /* ---------------- COMPETENCES ---------------- */
 .skills-section {
-    background: var(--bg);
+    background: var(--card);
 }
 
 .skills-grid {
@@ -245,6 +371,81 @@ header {
 
 .skill-item p {
     color: var(--text-light);
+}
+
+/* ---------------- EDUCATION ---------------- */
+.education-section {
+    background: var(--bg);
+}
+
+.education-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.education-card {
+    background: var(--bg);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+}
+
+.education-header {
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-icon {
+    font-size: 2rem;
+}
+
+.education-body {
+    padding: 1.5rem;
+}
+
+.education-body h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.institution {
+    color: var(--secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.education-details p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.education-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.education-skills li {
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1.25rem;
+    font-size: 0.75rem;
 }
 
 /* ---------------- EXPERIENCES ---------------- */
@@ -534,132 +735,6 @@ footer {
 }
 
 /* ---------------- AUTRES PAGES ---------------- */
-
-/* Section À propos (si utilisée ailleurs) */
-.about-section {
-    background: var(--card);
-    margin-top: 5rem;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.about-img {
-    flex: 1;
-}
-
-.profile-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 25rem;
-    aspect-ratio: 1/1;
-    border-radius: 0.625rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin: 0 auto;
-    min-width: 15rem;
-}
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-item {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-item.active {
-    opacity: 1;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Contrôles Carrousel */
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.25rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-control:hover {
-    background: var(--accent);
-}
-
-.carousel-control.prev {
-    left: 1rem;
-}
-
-.carousel-control.next {
-    right: 1rem;
-}
-
-/* Indicateurs Carrousel */
-.carousel-indicators {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.625rem;
-}
-
-.indicator {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.indicator.active {
-    background: var(--accent);
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
-}
-
-.about-text h1 span {
-    color: var(--secondary);
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    line-height: 1.8;
-}
 
 /* Page Projet */
 .project-hero {
@@ -961,6 +1036,10 @@ footer {
     
     .console-item {
         flex-direction: column;
+    }
+
+    .education-cards {
+        grid-template-columns: 1fr;
     }
 }
 
