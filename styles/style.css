@@ -8,7 +8,7 @@
     --lm-card: #fff;
     --lm-text: #333;
     --lm-text-light: #7f8c8d;
-    
+
     /* Dark Mode */
     --dm-primary: #3498db;
     --dm-secondary: #e7ebf0;
@@ -17,7 +17,7 @@
     --dm-card: #1e1e1e;
     --dm-text: #f5f5f5;
     --dm-text-light: #b0b0b0;
-    
+
     /* Variables actives */
     --primary: var(--lm-primary);
     --secondary: var(--lm-secondary);
@@ -42,14 +42,16 @@ body.dark-mode {
 }
 
 /* Reset et base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     color: var(--text);
     background: var(--bg);
@@ -57,8 +59,10 @@ body {
 }
 
 /* Typographie */
-h1, h2, h3 {
-    font-family: 'Open Sans', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: "Open Sans", sans-serif;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -67,7 +71,7 @@ h1, h2, h3 {
 }
 
 h2::after {
-    content: '';
+    content: "";
     display: block;
     width: 5rem;
     height: 0.25rem;
@@ -168,7 +172,7 @@ section {
     transition: transform 0.3s ease;
 }
 
-.toggle-checkbox:checked + .toggle-label .toggle-ball {
+.toggle-checkbox:checked+.toggle-label .toggle-ball {
     transform: translateX(1.875rem);
 }
 
@@ -461,7 +465,7 @@ header {
 }
 
 .timeline::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0.25rem;
     background: var(--secondary);
@@ -516,7 +520,7 @@ header {
 }
 
 .timeline-item::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 1.5625rem;
     height: 1.5625rem;
@@ -703,7 +707,7 @@ header {
 }
 
 .section-title::after {
-    content: '';
+    content: "";
     display: block;
     width: 5rem;
     height: 0.25rem;
@@ -982,7 +986,7 @@ footer {
     .about-content {
         flex-direction: column;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 5rem;
@@ -995,15 +999,15 @@ footer {
         clip-path: circle(0 at 90% -10%);
         transition: clip-path 0.5s ease;
     }
-    
+
     .nav-links.active {
         clip-path: circle(150% at 90% -10%);
     }
-    
+
     .burger {
         display: flex;
     }
-    
+
     .project-hero {
         padding: 4rem 0 3rem;
     }
@@ -1025,7 +1029,7 @@ footer {
     .project-hero h1 {
         font-size: 2.25rem;
     }
-    
+
     .project-hero p {
         font-size: 1.1rem;
     }
@@ -1033,7 +1037,7 @@ footer {
     .consoles-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .console-item {
         flex-direction: column;
     }
@@ -1048,11 +1052,11 @@ footer {
     section {
         padding: 4rem 0;
     }
-    
+
     .section-title {
         margin-bottom: 2rem;
     }
-    
+
     .skills-grid,
     .projects-grid,
     .passion-grid {
@@ -1060,16 +1064,16 @@ footer {
         max-width: 30rem;
         margin: 0 auto;
     }
-    
+
     .project-gallery {
         grid-template-columns: 1fr;
     }
-    
+
     .project-actions {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .project-actions .btn {
         width: 100%;
         max-width: 20rem;
@@ -1093,28 +1097,28 @@ footer {
     .timeline::after {
         left: 2rem;
     }
-    
+
     .timeline-item {
         width: 100%;
         padding-left: 4.5rem;
         padding-right: 1.5rem;
     }
-    
+
     .timeline-item:nth-child(even) {
         left: 0;
     }
-    
+
     .timeline-item:nth-child(odd) .timeline-date,
     .timeline-item:nth-child(even) .timeline-date {
         left: 1.5rem;
         right: auto;
         width: 7rem;
     }
-    
+
     .timeline-item::after {
         left: 1.0625rem;
     }
-    
+
     .timeline-item:nth-child(odd)::after,
     .timeline-item:nth-child(even)::after {
         left: 1.0625rem;
@@ -1123,7 +1127,7 @@ footer {
     .consoles-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .console-item {
         flex-direction: column;
     }
@@ -1134,15 +1138,15 @@ footer {
     section {
         padding: 3rem 0;
     }
-    
+
     .about-text h1 {
         font-size: 2rem;
     }
-    
+
     .profile-carousel {
         max-width: 20rem;
     }
-    
+
     .confirmation-box {
         padding: 2rem;
     }
