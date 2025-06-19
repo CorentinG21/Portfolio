@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Home2Home - Corentin Godon</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container header-container">
-            <a href="../"><div class="logo">Corentin GODON</div></a>
+            <a href="../">
+                <div class="logo">Corentin GODON</div>
+            </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html#about">À propos</a></li>
@@ -36,15 +42,19 @@
                 </div>
             </nav>
         </div>
-    </header> 
+    </header>
 
     <section class="project-detail container">
         <div class="project-content">
             <h2>Contexte du projet</h2>
-            <p><strong>Home2Home</strong> est une application web mobile développée dans le cadre de mon stage. Elle propose un service de livraison de colis entre particuliers en s'appuyant sur les trajets ferroviaires existants. L’objectif est de permettre à des voyageurs de transporter des colis d’un point A à un point B en échange d’une compensation, tout en assurant un suivi sécurisé.</p>
+            <p><strong>Home2Home</strong> est une application web mobile développée dans le cadre de mon stage. Elle
+                propose un service de livraison de colis entre particuliers en s'appuyant sur les trajets ferroviaires
+                existants. L’objectif est de permettre à des voyageurs de transporter des colis d’un point A à un point
+                B en échange d’une compensation, tout en assurant un suivi sécurisé.</p>
 
             <h2>Galerie du Projet</h2>
-            <p>La galerie sera bientôt disponible. Le projet est actuellement en cours de finalisation et n’a pas encore été déployé.</p>
+            <p>La galerie sera bientôt disponible. Le projet est actuellement en cours de finalisation et n’a pas encore
+                été déployé.</p>
 
             <!-- <div class="project-gallery">
                 <img src="../assets/images/Home2Home/home2home_1.png" alt="Capture interface dépôt de colis">
@@ -54,7 +64,8 @@
 
             <h2>Fonctionnalités principales</h2>
             <ul>
-                <li><strong>Dépôt de colis :</strong> formulaire en plusieurs étapes avec génération automatique de QR codes</li>
+                <li><strong>Dépôt de colis :</strong> formulaire en plusieurs étapes avec génération automatique de QR
+                    codes</li>
                 <li><strong>Recherche de trajets :</strong> affichage des trajets disponibles pour les voyageurs</li>
                 <li><strong>Prise en charge de colis :</strong> système de scan de QR code pour validation</li>
                 <li><strong>Suivi des colis :</strong> état en temps réel (déposé, en transit, livré)</li>
@@ -74,7 +85,8 @@
             <h2>Défis rencontrés</h2>
             <ul>
                 <li><strong>Synchronisation des étapes :</strong> gérer les statuts du colis entre utilisateurs</li>
-                <li><strong>Conception de l’expérience utilisateur :</strong> simplification du dépôt/scan/prise en charge</li>
+                <li><strong>Conception de l’expérience utilisateur :</strong> simplification du dépôt/scan/prise en
+                    charge</li>
                 <li><strong>Développement Flutter :</strong> prise en main d’un nouveau framework mobile</li>
                 <li><strong>Connexion API ferroviaire :</strong> pour lister les trajets réels (intégration prévue)</li>
             </ul>
@@ -117,7 +129,7 @@
             const burger = document.querySelector('.burger');
             const navLinks = document.querySelector('.nav-links');
 
-            burger.addEventListener('click', function() {
+            burger.addEventListener('click', function () {
                 navLinks.classList.toggle('active');  // Toggle visibility of the navigation menu
                 burger.classList.toggle('active');    // Toggle the active state for the burger icon
             });
@@ -144,7 +156,8 @@
     </script>
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-      </script>
-      <script defer src="/_vercel/insights/script.js"></script>
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
