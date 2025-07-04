@@ -1104,6 +1104,26 @@ footer {
     .console-item {
         flex-direction: column;
     }
+
+    .alert-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .alert-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .alert-content {
+        margin-bottom: 1.5rem;
+    }
+    
+    .alert-btn {
+        margin-left: 0;
+        align-self: stretch;
+    }
 }
 
 /* Responsive pour les petits écrans */
@@ -1189,6 +1209,26 @@ footer {
     
     .console-item {
         flex-direction: column;
+    }
+
+    .alert-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .alert-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .alert-content {
+        margin-bottom: 1.5rem;
+    }
+    
+    .alert-btn {
+        margin-left: 0;
+        align-self: stretch;
     }
 }
 
