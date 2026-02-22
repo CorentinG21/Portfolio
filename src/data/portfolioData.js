@@ -145,6 +145,23 @@ export const passions = [
   },
 ]
 
+export const gentleMatesMainGames = [
+  { name: 'Valorant', icon: '🎯', desc: 'Équipe performante en VCT EMEA, au plus haut niveau européen.', color: 'from-red-600/30 to-red-800/20 border-red-600/50' },
+  { name: 'Valorant Game Changers', icon: '🎯', desc: 'Équipe dédiée à l\'excellence féminine dans le jeu Valorant.', color: 'from-pink-600/30 to-pink-800/20 border-pink-600/50' },
+  { name: 'Rocket League', icon: '🚀', desc: 'Une présence notable avec des joueurs talentueux.', color: 'from-blue-600/30 to-blue-800/20 border-blue-600/50' },
+  { name: 'Call of Duty', icon: '🎖️', desc: 'Une équipe compétitive qui vise les sommets.', color: 'from-green-600/30 to-green-800/20 border-green-600/50' },
+  { name: 'CS:GO', icon: '🔫', desc: 'Une équipe qui a su se faire une place dans la scène compétitive.', color: 'from-yellow-600/30 to-yellow-800/20 border-yellow-600/50' },
+
+]
+
+export const gentleMatesOtherGames = [
+  { name: 'Fortnite', icon: '⚡' },
+  { name: 'Teamfight Tactics', icon: '♟️' },
+  { name: 'Age of Empires IV', icon: '🏰' },
+  { name: 'Warzone 2', icon: '💣' },
+  { name: '2XKO', icon: '🥊' },
+]
+
 export const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/corentin-godon/', ariaLabel: 'LinkedIn' },
   { label: 'GitHub', href: 'https://github.com/CorentinG21', ariaLabel: 'GitHub' },
