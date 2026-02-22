@@ -39,6 +39,16 @@ export const skills = [
     name: 'SQL',
     description: 'Gestion de bases de données relationnelles, optimisation des requêtes et intégrité des données.',
   },
+  {
+    icon: '⚛️',
+    name: 'React',
+    description: 'Création d\'interfaces utilisateur dynamiques et réactives pour des expériences web modernes.',
+  },
+  {
+    icon: '🧰',
+    name: 'Suite Windev',
+    description: 'Développement d\'applications de gestion avec les outils de la suite Windev.',
+  }
 ]
 
 export const education = [
