@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 96%;
+    --foreground: 220 25% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 14%;
+    --primary: 213 45% 22%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 207 85% 54%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 16% 90%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 6 82% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 16% 86%;
+    --input: 220 16% 86%;
+    --ring: 207 85% 54%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 28% 8%;
+    --foreground: 210 40% 96%;
+    --card: 222 24% 12%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 24% 12%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 207 85% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 35% 75%;
+    --secondary-foreground: 222 28% 10%;
+    --muted: 222 20% 18%;
+    --muted-foreground: 215 18% 60%;
+    --accent: 6 82% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 207 85% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  /* Scrollbar custom */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.7);
+  }
+}
+
+@layer utilities {
+  /* Gradient text utilitaire */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Section title avec underline animé */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold font-heading text-foreground relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 h-1 rounded-full bg-gradient-to-r from-secondary to-accent;
+    width: 3rem;
+    transition: width 0.3s ease;
+  }
+
+  .section-title:hover::after {
+    width: 100%;
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl;
+  }
+
+  /* Fade-in animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out both;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
